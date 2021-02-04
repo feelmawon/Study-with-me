@@ -1,0 +1,13 @@
+def timeConversion(s):
+    hour, minute, sec_ampm = s.split(':')
+    ampm = sec_ampm[2:]
+    
+    if ampm == 'PM' and hour == '12':
+        return hour + s[2:8]
+    if ampm == 'PM' and hour != '12':
+        return str(int(hour)+12) + s[2:8]
+    if ampm == 'AM' and hour == '12':
+        hour = '00'
+        return hour + s[2:8]
+    else:
+        return hour + s[2:8]
